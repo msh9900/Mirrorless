@@ -97,3 +97,34 @@ function addOn(t) {
   console.log(slideNum);
   listCamcoder[slideNum].classList.add("on");
 }
+
+/* custom sub페이지 +, - 누르면 증감되도록 하기*/
+// + 누르면 1 증가
+let cost = document.querySelectorAll(".cost");
+let plus = document.querySelectorAll(".plus");
+let minus = document.querySelectorAll(".minus");
+let result = document.querySelectorAll(".result");
+let totalcost = document.querySelectorAll(".totalcost");
+let k = 1;
+
+for (let i = 0; i < lenCamcoder; i++) {
+  plus[i].addEventListener("click", () => {
+    k++;
+    result[i].textContent = k;
+    const price = parseInt(cost[i].textContent);
+    let totalcostNum = k * price;
+    totalcost[i].textContent = "₩" + totalcostNum.toLocaleString();
+  });
+
+  minus[i].addEventListener("click", () => {
+    if (i > 0) {
+      k--;
+      result[i].textContent = k;
+      const price = parseInt(cost[i].textContent);
+      let totalcostNum = k * price;
+      totalcost[i].textContent = "₩" + totalcostNum.toLocaleString();
+    } else {
+      totalcost[i].textContent = "₩" + 0;
+    }
+  });
+}

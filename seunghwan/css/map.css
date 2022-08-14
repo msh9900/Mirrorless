@@ -80,7 +80,6 @@ body {
   font: 16px/1 "Racing Sans One";
   width: 100%;
   height: 100vh;
-  padding: 0px 150px;
   position: relative;
 }
 
@@ -683,6 +682,9 @@ header #bars .sub_menu .sub_product li {
 .button ul li a {
   font: normal 16px/1 "airal";
   color: #787878;
+}
+.warp{
+  padding: 0px 150px;
 }
 
 .upButton {

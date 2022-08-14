@@ -1,10 +1,10 @@
 /*main page*/
 
 /* 1. types of camera : scroll하면 크기 조정(줄이기)*/
-gsap.to('.typeimg', {
+gsap.to(".typeimg", {
   scrollTrigger: {
-    trigger: '.types',
-    toggleActions: 'restart',
+    trigger: ".types",
+    toggleActions: "restart",
   },
   scale: 0.7,
   duration: 1.5,
@@ -60,22 +60,35 @@ gsap.to('.typeimg', {
 // /*custom main페이지 카메라 돌아가기*/
 let isFirst = -1;
 
-window.addEventListener('load', (e) => {
+window.addEventListener("load", (e) => {
   changeCameraImg();
 });
 
 function changeCameraImg() {
-  const customCamera = document.querySelector('article>img');
+  const customCamera = document.querySelector("article>img");
   console.log(customCamera);
-  const cameraNames = ["custom", "custom1", "custom2", "custom3", "custom4", "custom5", "custom6", "custom7", "custom8", "custom9"];
+  const cameraNames = [
+    "custom",
+    "custom1",
+    "custom2",
+    "custom3",
+    "custom4",
+    "custom5",
+    "custom6",
+    "custom7",
+    "custom8",
+    "custom9",
+  ];
 
   for (i = 1; i < 8; i++) {
     (function (x) {
       setTimeout(function () {
-        customCamera.setAttribute("src", `../yurim/img/main/${cameraNames[x]}.png`);
+        customCamera.setAttribute(
+          "src",
+          `../yurim/img/main/${cameraNames[x]}.png`
+        );
         if (x === 7) changeCameraImg();
       }, 500 * x);
     })(i);
   }
 }
-  

@@ -1,37 +1,34 @@
 /* 1. position : fixed되어있는 img 특정 지점에서 위치값 고정시키기*/
 
 //카메라 이미지, 카메라 가격, +add to cart
-const cameraImg = document.querySelector('.expand > .img');
-const cameraPrice = document.querySelector('.expand > .add-cart > .price');
-const cameraAddto = document.querySelector('.expand > .add-cart > a');
+const cameraImg = document.querySelector(".expand > .img");
+const cameraPrice = document.querySelector(".expand > .add-cart > .price");
+const cameraAddto = document.querySelector(".expand > .add-cart > a");
 // console.log(cameraPrice);
 // console.log(cameraAddto);
 // console.log(cameraImg);
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   if (scrollY > 250) {
-    cameraImg.classList.add('on');
-    cameraPrice.classList.add('on');
-    cameraAddto.classList.add('on');
+    cameraImg.classList.add("on");
+    cameraPrice.classList.add("on");
+    cameraAddto.classList.add("on");
   } else {
-    cameraImg.classList.remove('on')
-    cameraPrice.classList.remove('on');
-    cameraAddto.classList.remove('on');
+    cameraImg.classList.remove("on");
+    cameraPrice.classList.remove("on");
+    cameraAddto.classList.remove("on");
   }
-})
- 
+});
+
 //scrollY지점 확인용 코드
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   console.log(window.scrollY);
-})
+});
 //해당 요소의 지금 x,y좌표 값 확인용 코드
-const img = document.querySelector('.img');
+const img = document.querySelector(".img");
 let rect = img.getBoundingClientRect();
 console.log(rect.x);
 console.log(rect.y);
-
-
-
 
 /* 2. input창 클릭하면 나오게하는 것*/
 let inputlist = document.querySelector(".sub_list li");
@@ -49,37 +46,29 @@ inputBtn.addEventListener("click", (e) => {
   }
 });
 
-
-
-
-
-
 /* 3. custom sub페이지 +, - 누르면 증감되도록 하기*/
-// + 누르면 1 증가 
+// + 누르면 1 증가
 let plus = document.querySelector(".plus");
 let minus = document.querySelector(".minus");
-let result = document.querySelector("#result")
-let totalcost = document.querySelector('.totalcost')
+let result = document.querySelector("#result");
+let totalcost = document.querySelector(".totalcost");
 let i = 1;
 plus.addEventListener("click", () => {
-  i++
+  i++;
   result.textContent = i;
-  let totalcostNum = i*450000;
+  let totalcostNum = i * 450000;
   totalcost.textContent = "₩" + totalcostNum.toLocaleString();
-
-})
+});
 minus.addEventListener("click", () => {
-  if(i > 0){
-    i--
-    result.textContent = i; 
-    let totalcostNum = i*450000;
+  if (i > 0) {
+    i--;
+    result.textContent = i;
+    let totalcostNum = i * 450000;
     totalcost.textContent = "₩" + totalcostNum.toLocaleString();
-    
-  }else {
-    totalcost.textContent = "₩" + 0
+  } else {
+    totalcost.textContent = "₩" + 0;
   }
-})
-
+});
 
 /* 3. custom sub페이지 클릭하면 input값에 나타나게하기*/
 /* 3-1. 색상 넣기*/
@@ -120,25 +109,33 @@ minus.addEventListener("click", () => {
 // }
 
 /*방법 2 : for문*/
-let inputBox = document.querySelector('.inputbox'); //색을 넣을 위치 선언
+let inputBox = document.querySelector(".inputbox"); //색을 넣을 위치 선언
 const selectColors = document.querySelectorAll(".color > .color_select span");
 //순서대로 넣을 색상값 배열로 만들기
-const colors = ["#f36969", "#ffbc3f", "#ffff88", "#6da26d", "#55add8", "#313159", "#ba89ba", "#404040"];
+const colors = [
+  "#f36969",
+  "#ffbc3f",
+  "#ffff88",
+  "#6da26d",
+  "#55add8",
+  "#313159",
+  "#ba89ba",
+  "#404040",
+];
 
 //for문으로 순서대로 색 넣어주기
 for (let i = 0; i < selectColors.length; i++) {
   selectColors[i].addEventListener("click", () => {
     inputBox.style.backgroundColor = colors[i];
-  })
+  });
 }
-
 
 /* 3-2. 이모지 넣기*/
 let selectEmojies = document.querySelectorAll(".emoji > .emoji_select span");
-let inputBox_emoji = document.querySelector('.emoji > .inputbox_emoji');
+let inputBox_emoji = document.querySelector(".emoji > .inputbox_emoji");
 
-selectEmojies.forEach(el => {
+selectEmojies.forEach((el) => {
   el.addEventListener("click", () => {
     inputBox_emoji.innerHTML = el.innerHTML;
-  })
+  });
 });

@@ -6,7 +6,9 @@
   padding: 0;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
   list-style: none;
 }
 
@@ -25,9 +27,9 @@ a {
   --color-deep-black: #111;
   --color-black: #3f454d;
   --color-white: #fff;
-  --color-blue: #A6D1E6;
-  --color-yellow: #FFC54D;
-  --color-pink: #FF869E;
+  --color-blue: #a6d1e6;
+  --color-yellow: #ffc54d;
+  --color-pink: #ff869e;
   --color-grey: rgb(149, 146, 146);
   --color-light-grey: #dfdfdf;
   --color-dd: #f3eee1;
@@ -35,24 +37,27 @@ a {
 }
 
 body {
-  font: 16px/1 "Racing Sans One";
-  background-color: var(--color-white);
   width: 100%;
-  height: 100%;
-  overflow-x: hidden;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
+/* Header */
+header {
+  font: normal 16px/1 "Racing Sans One";
+}
 header.on {
   display: none;
 }
 header .main_header {
+  margin: 0;
   z-index: 4;
-  width: 100%;
+  width: 97%;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #dfdfdf;
   transition: 1.4s;
 }
 header .main_header .logo {
@@ -60,9 +65,8 @@ header .main_header .logo {
   align-items: center;
 }
 header .main_header .logo a.name {
-  color: var(--color-deep-black);
-  margin: 0 6vw;
-  font: 40px/1 "Racing Sans One";
+  color: black;
+  font-size: 40px;
 }
 header .main_header .logo a.icon {
   margin-left: 8px;
@@ -70,66 +74,13 @@ header .main_header .logo a.icon {
 }
 header .main_header nav ul {
   display: flex;
-  justify-content: space-between;
-  padding-right: 6vw;
 }
 header .main_header nav ul li {
   margin: 0px 16px;
   cursor: pointer;
 }
 header .main_header nav ul li a {
-  color: var(--color-deep-black);
-  margin-right: 2vw;
-}
-header #bars {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  display: none;
-  width: 370px;
-  height: 100%;
-  margin-left: auto;
-  font-size: 22px;
-  top: 10vh;
-  right: 0%;
-  z-index: 2;
-}
-header #bars.active {
-  display: block;
-}
-header #bars .sub_menu {
-  border: 1px solid #000;
-  background-color: #000;
-}
-header #bars .sub_menu li {
-  padding: 18px 12px;
-  transition: 0.5s;
-}
-header #bars .sub_menu li:hover {
-  background-color: var(--color-deep-black) a;
-  background-color-color: #f6f6f6;
-}
-header #bars .sub_menu li a {
-  color: #fff;
-}
-header #bars .sub_menu li a i {
-  margin: 8px;
-}
-header #bars .sub_menu li a i.fa-angle-down {
-  margin-left: 170px;
-}
-header #bars .sub_menu li .icon {
-  text-align: center;
-}
-header #bars .sub_menu .sub_product {
-  display: none;
-}
-header #bars .sub_menu .sub_product.active {
-  display: block;
-}
-header #bars .sub_menu .sub_product li {
-  font-size: 16px;
-  padding: 12px 12px 12px 42px;
+  color: black;
 }
 
 .mainbox {
@@ -227,13 +178,13 @@ article.problem {
 }
 article.problem .collabo_content div:not(:nth-of-type(4)) {
   width: 35%;
-  height: 85%;
+  height: 75%;
   left: 10vw;
   background-color: #e9dcd4;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 article.problem .collabo_content div:not(:nth-of-type(4)) .collabo_content_title {
-  font: 700 25px/1 "MICEGothic Bold";
+  font: 700 22px/1 "MICEGothic Bold";
   position: absolute;
   top: 3vh;
   left: 3vh;
@@ -292,22 +243,22 @@ article.problem .collabo_content div:nth-of-type(4) img {
   width: 95%;
 }
 article.problem .collabo_titile {
-  font: 160px/1 "Racing Sans One";
+  font: 140px/1 "Racing Sans One";
 }
 article.problem .collabo_titile span:nth-of-type(1) {
   position: absolute;
-  top: 115vh;
+  top: 127vh;
   right: 23vw;
 }
 article.problem .collabo_titile span:nth-of-type(2) {
   position: absolute;
   top: 155vh;
-  right: 6vw;
+  right: 10vw;
 }
 article.problem .collabo_titile span:nth-of-type(3) {
   position: absolute;
-  top: 195vh;
-  right: 26vw;
+  top: 185vh;
+  right: 27vw;
 }
 
 /* WRAP */
@@ -320,9 +271,9 @@ article.problem .collabo_titile span:nth-of-type(3) {
   position: absolute;
   top: 195vh;
   width: 45%;
+  right: 11vw;
   padding: 20px;
   background-color: #ff6602;
-  right: 10vw;
   text-align: right;
   border-radius: 5px;
   font: bold 50px/1 "Racing Sans One";
@@ -331,8 +282,8 @@ article.problem .collabo_titile span:nth-of-type(3) {
   position: relative;
   top: 215vh;
   left: 10vw;
-  margin-right: 70px;
-  width: 330px;
+  margin-left: 12px;
+  width: 370px;
   padding: 30px 0;
   background-color: transparent;
   border-radius: 10px;
@@ -366,36 +317,32 @@ article.problem .collabo_titile span:nth-of-type(3) {
   width: 180px;
   height: 32px;
   margin: 0px auto 20px;
-  color: #000;
-  background-color: #ff6602;
+  color: #fff;
+  background-color: #333;
   font: bold 20px/1.3 "Racing Sans One";
   border-radius: 16px;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);
   letter-spacing: 1px;
 }
 .ourteam section.wrap .part li {
-  text-align: left;
+  text-align: center;
   font: 16px/1 "MICEGothic Bold";
   padding: 10px;
-  height: 40px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #888;
+  margin-bottom: 10px;
 }
 .ourteam section.wrap .stacks {
-  padding: 150px 0;
+  padding: 15px 0;
 }
 .ourteam section.wrap .stacks .stack_title {
   display: block;
   width: 180px;
   height: 32px;
   margin: 0px auto 20px;
-  color: #000;
-  background-color: #ff6602;
+  color: #fff;
+  background-color: #333;
   font: bold 20px/1.3 "Racing Sans One";
   border-radius: 16px;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);
   letter-spacing: 1px;
 }
 .ourteam section.wrap .stacks .stack {
@@ -410,7 +357,7 @@ article.problem .collabo_titile span:nth-of-type(3) {
   display: flex;
   justify-content: center;
   text-align: center;
-  font: 25px/1 "arial";
+  font: 20px/1 "arial";
 }
 .ourteam section.wrap .contact a {
   padding: 10px 20px;
@@ -425,7 +372,7 @@ article.problem .collabo_titile span:nth-of-type(3) {
 /*footer*/
 footer {
   position: absolute;
-  top: 440vh;
+  top: 425vh;
   width: 100%;
   padding: 4vh 0 1vh 0;
   margin-top: 6vh;
